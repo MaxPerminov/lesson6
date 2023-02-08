@@ -49,3 +49,18 @@ except:
 
 time.sleep(15)
 
+_______________________________________________________________________
+jsonplaceholder.typicode.com - site with json data for training 
+
+
+Postman
+to begin:
+1)create new collection(plus) - <people>
+2)add request(...)
+3)change request name - <get-all-people>
+4)send https://jsonplaceholder.typicode.com/users in request url(choose put)
+5)go to <Headers> tab: check out <Content-Type> and <Server>
+6)send https://jsonplaceholder.typicode.com/users in request url(choose post)
+7)in <x-www-form-urlencoded> of <Headears> tab enter keys: user1, user2; values: max, john
+8)qwery params - is an appearing text in url, when sending inputs. 
+Enter keys: name, password; values: max, 123 in <Params>
