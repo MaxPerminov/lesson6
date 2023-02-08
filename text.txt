@@ -1,0 +1,51 @@
+Framework - what
+Library  - how and what 
+installing web driver - 4)hard coded location
+it's necessarily to place driver's folder to working directory and run the file with no antivirus on
+
+for details - https://www.selenium.dev/documentation/
+
+to search by xpass - ctrl+F in devtools
+//a[@class="checkbox-filter__link"]
+___________________
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+driver = webdriver.Chrome()
+driver.get("https://rozetka.com.ua/ua/")
+driver.implicitly_wait(8.5)
+time.sleep(1)
+
+
+====
+button_catalog = driver.find_element(by=By.ID, value="fat-menu")
+button_catalog.click()
+
+----
+search_input = driver.find_element(by=By.NAME, value="search")
+search_input.send_keys("Playstation") 
+
+----
+btn_cn = "search-form__submit"
+checkboxes_xpath = """//a[@class="checkbox-filter__link"]"""
+button_catalog = driver.find_element(by=By.CLASS_NAME, value=btn_cn)
+search_input = driver.find_element(by=By.NAME, value="search")
+search_input.send_keys("Smatphone") 
+button_catalog.click()
+time.sleep(1)
+
+try: 
+  time.sleep(2)
+  checkboxes = driver.find_elements(by=By.XPATH, value=checkboxes_xpath)
+  print(checkboxes)
+  time.sleep(2)
+  reEvaluete(checkboxes_xpath)[0].click()
+  time.sleep(2)
+  reEvaluete(checkboxes_xpath)[4].click()
+  time.sleep(2)
+  reEvaluete(checkboxes_xpath)[6].click()
+except:
+  print("Something went wrong")
+
+time.sleep(15)
+
