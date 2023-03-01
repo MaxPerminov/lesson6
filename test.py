@@ -33,6 +33,5 @@ try:
 except:
   print("Something went wrong")
 time.sleep(15)
-
-
+driver.quit()
 
